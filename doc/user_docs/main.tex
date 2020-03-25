@@ -89,6 +89,11 @@
   \unskip\computecountitems\ifnumcomp{\previtemizecount}{>}{3}{\end{multicols}}{}}
 
 
+  % Theorems
+  \theoremstyle{definition}
+  \newtheorem{defn*}{Definition}
+  \theoremstyle{plain}
+  \newtheorem{theorem*}{Equation}
 
   % Colors
   \newcommand{\commentstylecolor}{\color{Gray}}
@@ -206,7 +211,35 @@
       \textbf{Instructions}\vspace{-8pt}
       \begin{enumerate}
         \item Review the general programming assignment instructions.
-        \item Placeholder
+        \item During winter when it is very cold, typically, everyone would
+          like to know the windchill factor, especially, before going out.
+          Meteorologists use the following formula to compute the windchill
+          factor, $W$:
+          \begin{defn*}[V]
+            Windspeed in $\frac{miles}{hour}$
+          \end{defn*}
+          \begin{defn*}[T]
+            Temperature in $^{\circ}\text{F}$
+          \end{defn*}
+          \begin{theorem*}
+            \begin{equation*}
+              W=35.74+0.6215*T-35.75*V^{0.16}+0.4275*T*V^{0.16}
+            \end{equation*}
+          \end{theorem*}
+        \item Write a program that prompts the user to input the wind speed, in
+          miles per hour, and the temperature in degrees Fahrenheit. The program
+          then outputs the windchill factor.
+          \begin{enumerate}[label=\alph*.]
+            \item Your program must contain at least two functions: one to get
+              the user input and the other to determine the windchill factor.
+            \item The main function is not considered to be one of two
+              functions. That function is always included. Also, the functions
+              must include data being passed to them and if necessary a value
+              returned.
+            \item Hint: ideally the function for user input is a void function
+              passing parameters by reference and the windchill function should
+              be a value-returning function.
+          \end{enumerate}
       \end{enumerate}
     \end{mdframed}
 
@@ -221,6 +254,13 @@
           (stdout)},%
         label={desiredoutput:stdout}%
     ]
+Enter wind speed in miles per hour: 88
+
+Enter temperature in degree Fahrenheit: 11
+
+Current temperature: 11F
+Windchill factor: -20F
+Press any key to continue...
 
       \end{lstlisting}
 
