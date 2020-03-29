@@ -1,15 +1,17 @@
 #include "../include/catch2/catch.hpp"
 #include "../include/chapter6.hh"
-#include <vector>
 
 using namespace chapter6;
 
-SCENARIO("Placeholder", "[]") {
-  GIVEN("Something") {
+SCENARIO("We are supplied normal, integer-type inputs", "[calculation]") {
+  GIVEN("The supplied data") {
+    int windSpeed = 88;
+    int temperature = 11;
 
-    WHEN("We do this") {
+    WHEN("We calculate the windchill") {
+      int windChill = chapter6::calculateWindchill(windSpeed, temperature);
 
-      THEN("The computations are correct") { REQUIRE(1 == 1); }
+      THEN("The computation results to -20") { REQUIRE(windChill == -20); }
     }
   }
 }
