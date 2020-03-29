@@ -2,25 +2,34 @@
  * @file main.cxx
  * @author Ashton Scott Hellwig (ahellwig@student.cccs.edu)
  * @brief This file contains the main function to run the program.
- * @date 2020-03-24
+ * @date 2020-03-28
  *
  * Assignment: Module 3 Chapter 6 Programming Assignment
  * Description: This file contains the main function to run the program.
  * Instructor: Jeffrey Hemmes
  * Course:
  *   [CSC 160] Introduction to Programming (C++)
- * Date: 24 March 2020
+ * Date: 28 March 2020
  */
 
-#include "../include/chapter6.hh"          //
+#include "../include/chapter6.hh" // calculateWindchill, getInputVariables
 #include "../include/general_functions.hh" // pauseprompt
-#include <iostream>                        // cout, cin
+#include <iostream>                        // cin, cout
 
 /**
  * @brief Performs the steps to execute the main application.
  */
 int main() {
-  std::cout << "Hello, world!" << std::endl;
+  int windSpeed;
+  int temperature;
+
+  chapter6::getInputVariables(windSpeed, temperature);
+
+  int windChill = chapter6::calculateWindchill(windSpeed, temperature);
+
+  std::cout << "Current temperature: " << temperature << "F\n";
+
+  std::cout << "Windchill factor: " << windChill << 'F' << std::endl;
 
   // "Press enter to continue..."
   general_functions::pauseprompt();
