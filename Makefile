@@ -24,10 +24,12 @@ CXXFLAGS := \
 	-std=gnu++2a \
 	-Wall \
 	-Wextra \
-	-ggdb
+	-ggdb \
+	-DDEBUG=1
 LFLAGS := \
 	-std=gnu++2a \
-	-ggdb
+	-ggdb \
+	-DDEBUG=1
 
 # --- Test Variables ---
 TEST_PROGRAM := out/bin/test

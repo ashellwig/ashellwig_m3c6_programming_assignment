@@ -27,7 +27,8 @@
     "-std=gnu++2a",
     "-Iinclude",
     "-isystem include/catch2",
-    "-isystem include/cxxopts"
+    "-isystem include/cxxopts",
+    "-isystem include/fakeit"
   ],
   "doxdocgen.generic.briefTemplate": "@brief {text} ",
   "doxdocgen.generic.paramTemplate": "@param {param} ",
