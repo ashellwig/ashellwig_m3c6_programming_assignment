@@ -277,9 +277,28 @@ Press any key to continue...
       \caption{Chapter 6 Program Algorithm}
       \vspace{12pt}
       \begin{algorithmic}[1]
-        \Procedure{windchill}{$\&a,\&b$}
-          \State $x\gets 1$
-        \EndProcedure\label{windchillendproc}
+        \Procedure{main}{}
+          \State $a\gets 0$
+          \State $b\gets 0$
+          \State
+          \Procedure{getInput}{$\&a,\&b$}
+            \State\Call{toOutput}{``Enter wind speed in mph: ''}
+            \State $a\gets\text{firstInput}$
+            \State\Call{toOutput}{``Enter temp in degrees F: ''}
+            \State $b\gets\text{secondInput}$
+          \EndProcedure
+          \State
+          \Procedure{calculateWindchill}{$a,b$}
+            \State $windChill\gets 0$
+            \State
+            \State $windChill\gets 35.74+0.6215*b-35.75*a^{0.16}+0.4275*b*a^{0.16}$
+            \State
+            \State\Return $windChill$
+          \EndProcedure
+          \State
+          \State\Call{toOutput}{``Current temp: '' $ + b + \text{F}$}
+          \State\Call{toOutput}{``Windchill factor: '' $windChill$}
+        \EndProcedure
       \end{algorithmic}
       \label{alg}
     \end{algorithm}
