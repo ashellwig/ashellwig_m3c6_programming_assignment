@@ -12,7 +12,7 @@ PROGRAM := out/bin/ashellwig_m3c6_programming_assignment.bin
 CXX := /usr/bin/g++
 DOXYGEN := /usr/bin/doxygen
 RM := /bin/rm
-mv := /usr/bin/mv
+mv := /bin/mv
 
 # === VARIABLES ===
 # --- Program Variables ---
