@@ -244,7 +244,11 @@
     \end{mdframed}
 
     \subsection{Data}
-      Placeholder.
+      \begin{itemize}
+        \item We are given that the function taking user input should be a
+          |void| function achieving the target values with reference variables
+        \item We are given the equation used to calculate windchill factor.
+      \end{itemize}
 
     \subsection{Desired Output}
       \begin{lstlisting}[%
@@ -368,6 +372,7 @@ cd ~/Downloads/ashellwig_m3c6_programming_assignment/out/bin
       \includegraphics[width=\textwidth]{testout.png}
     \end{figure}
 
+    \newpage
     \subsection{Unit Test File}
       Below I have included the code used to run the unit test for reference.
 
@@ -386,6 +391,19 @@ SCENARIO("We are supplied normal, integer-type inputs", "[calculation]") {
       int windChill = chapter6::calculateWindchill(windSpeed, temperature);
 
       THEN("The computation results to -20") { REQUIRE(windChill == -20); }
+    }
+  }
+
+  GIVEN("A temperature of 15F and a wind speed of 60 mi./hr. ") {
+    int windSpeed = 60;
+    int temperature = 15;
+
+    WHEN("We calculate the windchill") {
+      int windChill = chapter6::calculateWindchill(windSpeed, temperature);
+
+      THEN("The windchill factor should be calculated as -11F") {
+        REQUIRE(windChill == -11);
+      }
     }
   }
 }
